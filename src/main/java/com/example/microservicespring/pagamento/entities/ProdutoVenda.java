@@ -1,6 +1,8 @@
 package com.example.microservicespring.pagamento.entities;
 
+import com.example.microservicespring.pagamento.data.vo.ProdutoVendaVO;
 import lombok.*;
+import org.modelmapper.ModelMapper;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -31,5 +33,9 @@ public class ProdutoVenda implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_venda")
     private Venda venda;
+
+    public static ProdutoVenda create(ProdutoVendaVO produtoVendaVO) {
+        return new ModelMapper().map(produtoVendaVO, ProdutoVenda.class);
+    }
 
 }

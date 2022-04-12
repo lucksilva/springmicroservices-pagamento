@@ -1,6 +1,8 @@
 package com.example.microservicespring.pagamento.entities;
 
+import com.example.microservicespring.pagamento.data.vo.VendaVO;
 import lombok.*;
+import org.modelmapper.ModelMapper;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -35,4 +37,7 @@ public class Venda implements Serializable {
     @Column(name = "valorTotal")
     private Double valorTotal;
 
+    public static Venda create(VendaVO vendaVO) {
+        return new ModelMapper().map(vendaVO, Venda.class);
+    }
 }

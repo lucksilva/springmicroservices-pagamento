@@ -1,6 +1,5 @@
 package com.example.microservicespring.pagamento.data.vo;
 
-import com.example.microservicespring.pagamento.entities.ProdutoVenda;
 import com.example.microservicespring.pagamento.entities.Venda;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -30,7 +29,7 @@ public class VendaVO  extends RepresentationModel<VendaVO> implements Serializab
     private Date data;
 
     @JsonProperty("produtos")
-    private List<ProdutoVenda> produtos;
+    private List<ProdutoVendaVO> produtos;
 
     @JsonProperty("valortotal")
     private Double valorTotal;

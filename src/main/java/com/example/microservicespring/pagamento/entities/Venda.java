@@ -27,7 +27,7 @@ public class Venda implements Serializable {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @DateTimeFormat(pattern = "MM/dd/yyyy")
+    @DateTimeFormat(pattern = "yyyy/MM/dd")
     @Column(name = "data", nullable = false)
     private Date data;
 

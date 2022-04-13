@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.*;
 import org.modelmapper.ModelMapper;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.hateoas.RepresentationModel;
 
 import java.io.Serializable;
@@ -26,6 +27,7 @@ public class VendaVO  extends RepresentationModel<VendaVO> implements Serializab
     private Long id;
 
     @JsonProperty("data")
+    @DateTimeFormat(pattern = "yyyy/MM/dd")
     private Date data;
 
     @JsonProperty("produtos")
